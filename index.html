@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Photo Upload</title>
+    <title>Chris and Rachel's Wedding</title>
     <style>
         body {
             display: flex;
@@ -26,10 +26,11 @@
             padding: 20px;
             font-size: 20px;
             cursor: pointer;
-            background-color: #4CAF50;
+            background-color: #3498db; /* Adjusted background color */
             color: white;
             border: none;
             border-radius: 5px;
+            margin-top: 10px; /* Added margin-top for spacing */
         }
     </style>
 </head>
@@ -40,13 +41,16 @@
         <p>Please share your photos or videos here</p>
     </div>
 
-    <form action="https://proud-cliff-0d58ef210.azurewebsites.net/api/your-function-name" method="post" enctype="multipart/form-data">
+    <form action="https://weddingphoto.azurewebsites.net/api/HttpTrigger1" method="post" enctype="multipart/form-data">
         <input type="file" name="photo" id="photoInput" style="display: none;">
         <label for="photoInput" id="photoButton">Choose Photo</label>
     </form>
 
     <script>
-        // You can add JavaScript logic here if needed
+        // JavaScript logic to trigger file input click
+        document.getElementById('photoButton').addEventListener('click', function () {
+            document.getElementById('photoInput').click();
+        });
     </script>
 </body>
 </html>
