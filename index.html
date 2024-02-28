@@ -1,18 +1,35 @@
-<form>
-  <input type="file" id="photoUpload" name="photo" accept="image/*">
-  <button type="button" onclick="uploadPhoto()">Upload Photo</button>
-</form>
-<script>
-  function uploadPhoto() {
-    var file = document.getElementById('photoUpload').files[0];
-    var blobService = AzureStorage.Blob.createBlobServiceWithSas('https://{your_storage_account}.blob.core.windows.net/', '{your_sas_token}');
-    var container = '{your_container_name}';
-    blobService.createBlockBlobFromBrowserFile(container, file.name, file, {}, function(error, result) {
-      if (error) {
-        // Handle the error
-      } else {
-        // Photo uploaded successfully
-      }
-    });
-  }
-</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Upload</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #photoButton {
+            padding: 20px;
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <input type="file" id="photoInput" style="display: none;">
+    <label for="photoInput" id="photoButton">Choose Photo</label>
+
+    <script>
+        // You can add JavaScript logic here if needed
+    </script>
+</body>
+</html>
