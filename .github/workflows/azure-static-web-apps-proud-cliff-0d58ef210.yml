@@ -15,7 +15,10 @@ jobs:
     runs-on: ubuntu-latest
     name: Build and Deploy Job
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '14' # or '16' based on your app's compatibility
+      - uses: actions/checkout@v2 # Updated to v2
         with:
           submodules: true
           lfs: false
