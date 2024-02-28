@@ -11,6 +11,15 @@
             justify-content: center;
             height: 100vh;
             margin: 0;
+            flex-direction: column; /* Added to arrange content vertically */
+        }
+
+        #welcomeBox {
+            background-color: #f0f0f0;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 20px;
         }
 
         #photoButton {
@@ -25,6 +34,11 @@
     </style>
 </head>
 <body>
+    <div id="welcomeBox">
+        <h2>Thank you for attending Rachel and Chris' wedding!</h2>
+        <p>Please share your photos here.</p>
+    </div>
+
     <input type="file" id="photoInput" style="display: none;">
     <label for="photoInput" id="photoButton">Choose Photo</label>
 
