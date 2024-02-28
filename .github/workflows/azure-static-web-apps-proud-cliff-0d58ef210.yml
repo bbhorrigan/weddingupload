@@ -20,7 +20,7 @@ jobs:
         with:
           node-version: '14' # or '16' based on your app's compatibility
       - name: Checkout repository
-        uses: actions/checkout@v2 # Updated to v2
+        uses: actions/checkout@v2 # Corrected to v2
           with:
             submodules: true
             lfs: false
